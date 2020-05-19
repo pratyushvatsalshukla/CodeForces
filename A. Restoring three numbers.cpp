@@ -1,13 +1,17 @@
-#include<iostream>
+#include<bits/stdc++.h>
 using namespace std ;
 int main(){
 	
-	int x1,x2,x3,x4 ;
-	cin >> x1 >> x2 >> x3>> x4 ;
-	int a,b,c ;
-	c = x4 - x1 ;
-	b = x4 - x2 ;
-	a = x4 - x3 ;
-	cout << a <<" " << b << " " << c ;
+	int x[4] ;
+	for(int i = 0 ; i <4; i++)
+	{
+		cin >> x[i] ;
+	}
+	sort(x,x+4) ;
 	
+	int sumTotal = x[3] ;
+	int a = sumTotal - x[0] ;
+	int b = sumTotal - x[1] ;
+	int c = sumTotal - x[2] ;
+	cout << a << " " << b << " " << c ;
 }
