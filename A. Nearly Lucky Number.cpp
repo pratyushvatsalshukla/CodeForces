@@ -1,42 +1,44 @@
-#include<iostream>
+#include<bits/stdc++.h>
 using namespace std ;
 int main(){
 	
-	int n ;
+	long long int n ; 
 	cin >> n ;
-	static int count = 0, countOccurFour = 0, countOccurSeven = 0, countOccur = 0 ;
-	int alias = n ;
-	while(alias > 0 )
+	long long int  alias = n ;
+	long long int length = 0;
+	while(alias != 0)
 	{
 		alias = alias/10 ;
-		count++ ;
+		length++ ;
 	}
-	for(int i = 0 ; i < count ; i++)
+	long long int countL = 0 ;
+	while(n != 0)
 	{
-		if(n%10 == 4)
+		if(n%10==7 || n%10==4)
 		{
-			countOccurFour++ ;
+			countL++ ;
 		}
-		else if(n%10 ==7)
+//		else
+//		{
+//			cout << "NO" ;
+//			exit(0) ;
+//		}
+		n = n/10 ;
+	}
+
+	while(countL >= 0)
+	{
+		if(countL%10 == 7 || countL%10 == 4)
 		{
-			countOccurSeven++ ;
+			
 		}
-		else{
-			cout<< "NO" ;
+		else
+		{
+			cout << "NO" ;
 			exit(0) ;
 		}
-		n = n/10 ;
+		countL = countL/10 ;
+	}
+	cout << "YES" ;
 		
-	}
-	countOccur = countOccurFour + countOccurSeven ;
-	if(countOccurFour == 0 || countOccurSeven == 0)
-	{
-		cout << "NO" ;
-		exit(0) ;
-	}
-	if( count == countOccur)
-	{
-		cout<<"YES" ;
-	}
-	
 }
