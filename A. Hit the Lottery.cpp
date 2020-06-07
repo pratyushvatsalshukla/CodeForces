@@ -1,38 +1,49 @@
-#include<iostream>
+#include<bits/stdc++.h>
 using namespace std ;
 int main(){
 	
-	long int n ;
+	int n ;
 	cin >> n ;
-	long int count = 0 ;
-	while(n>0)
+	int num = n ;
+	int count = 0 ;
+	while(num > 0)
 	{
-		if(n%100 == 0 || n >=100)
+		if(num >= 100)
 		{
-			count += n/100 ;
-			n = n/100 ;
+//			cout << "100 Done" ;
+			count += 1 ;
+//			cout << count << endl ;
+			num = num - 100 ;
 		}
-		else if(n%20 == 0)
+		else if(num % 20 == 0)
 		{
-			count+= n/20 ;
-			n = n/20 ;
+//			cout << "20 Done" ;
+			count += 1 ;
+//			cout << count << endl ;
+			num = num - 20 ;
 		}
-		else if(n%10 == 0)
+		else if(num % 10 == 0)
 		{
-			count+= n/10 ;
-			n = n/10 ;
+//			cout << "10 Done" ;
+			count += 1 ;
+//			cout << count << endl ;
+			num = num - 10 ;
 		}
-		else if(n%5 == 0)
+		else if(num % 5 ==0)
 		{
-			count += n/5 ;
-			n = n/5 ;
+//			cout << "5 Done" ;
+			count += 1 ;
+//			cout << count << endl ;
+			num = num - 5 ;
 		}
-		else
-		{
-			count += n ;
-				break ;
+		else{
+//			cout << "1 Done" ;
+			count +=1 ;
+//			cout << count << endl ;
+			num = num - 1 ;
 		}
 	}
 	cout << count ;
+	
 	
 }
